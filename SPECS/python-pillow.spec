@@ -8,7 +8,7 @@
 
 Name:           python-%{srcname}
 Version:        5.1.1
-Release:        18%{?dist}.1
+Release:        18%{?dist}.2
 Summary:        Python image processing library
 
 # License: see http://www.pythonware.com/products/pil/license.htm
@@ -117,6 +117,7 @@ Patch20:        CVE-2022-22815_CVE-2022-22816.patch
 # Upstream fix: https://github.com/python-pillow/Pillow/commit/02c6183d41c68a8dd080f5739f566bd82485822d
 # Patch rebased and tests converted from pytest to unittests.
 Patch21:        CVE-2023-50447.patch
+Patch22:        CVE-2024-28219.patch
 
 BuildRequires:  freetype-devel
 BuildRequires:  gcc
@@ -261,6 +262,9 @@ popd
 
 
 %changelog
+* Wed Sep 04 2024 Pratham Patel <ppatel@ciq.com> - 5.1.1-18.2
+- Fix CVE-2024-28219
+
 * Thu Jan 25 2024 Lumír Balhar <lbalhar@redhat.com> - 5.1.1-18.1
 - Security fix for CVE-2023-50447
 Resolves: RHEL-22591
